@@ -139,13 +139,13 @@ A component that provides an input field for adding new to-do items.<br>
     Response<br>
     Status 200: Returns an array of to-do lists.<br>
     Status 204: If the list is empty.<br>
-    Status 500: If there's an error reading the list.<br>
+    Status 500: If there's an error reading the list.<br><br>
   **GET /todos/:id**
     Retrieve a specific to-do list by ID.<br>
     Response<br>
     Status 200: Returns the to-do list.<br>
     Status 204: If the list is empty.<br>
-    Status 404: If the to-do list is not found.<br>
+    Status 404: If the to-do list is not found.<br><br>
    ***POST /todos***
     Create a new to-do list.<br>
     Request Body<br>
@@ -154,7 +154,7 @@ A component that provides an input field for adding new to-do items.<br>
     todoItems: Array of to-do items.<br>
     Response<br>
     Status 201: Returns the created to-do list.<br>
-    Status 400: If the provided data is invalid.<br>
+    Status 400: If the provided data is invalid.<br><br>
     ***POST /todos/:id/todoItems***
     Add a new item to a specific to-do list.<br>
     Request Body<br>
@@ -165,14 +165,14 @@ A component that provides an input field for adding new to-do items.<br>
     Response<br>
     Status 201: Item added successfully.<br>
     Status 400: If the provided data is invalid.<br>
-    Status 404: If the to-do list is not found.<br>
+    Status 404: If the to-do list is not found.<br><br>
    **PUT /todos/:id**<br>
     Update the title of a specific to-do list.<br>
     Request Body<br>
     title: New title for the to-do list.<br>
     Response<br>
     Status 200: Returns the updated to-do list.<br>
-    Status 404: If the to-do list is not found.<br>
+    Status 404: If the to-do list is not found.<br><br>
    **PUT /todos/:id/todoItems/:itemId**<br>
     Update a specific item within a to-do list.<br>
     Request Body<br>
@@ -181,17 +181,17 @@ A component that provides an input field for adding new to-do items.<br>
     isCompleted: New completion status.<br>
     Response<br>
     Status 200: Returns the updated item.<br>
-    Status 404: If the to-do list or item is not found.<br>
+    Status 404: If the to-do list or item is not found.<br><br>
     **DELETE /todos/:id/todoItems/:itemId**<br>
     Delete a specific item from a to-do list.<br>
     Response<br>
     Status 204: Item deleted successfully.<br>
-    Status 404: If the to-do list or item is not found.<br>
+    Status 404: If the to-do list or item is not found.<br><br>
     **DELETE /todos/:id**<br>
     Delete a specific to-do list.<br>
     Response<br>
     Status 204: To-do list deleted successfully.<br>
-    Status 404: If the to-do list is not found.<br>
+    Status 404: If the to-do list is not found.<br><br>
 
 **Styling**<br>
     The project uses custom CSS for styling. The CSS file is located at todoListClient/to-do/Components/src/Todo/TodoList.css.<br>
