@@ -45,56 +45,56 @@ Change to the directory
 	Cd TodoList
 # Installation:
  
-# Client: folder with the name todoListClient
-In terminal
+**Client: folder with the name todoListClient**
+In terminal<br>
 
-Navigate to the todoListClient directory:
-  cd todoListClient
- cd to-do
+Navigate to the todoListClient directory:<br>
+    cd todoListClient<br>
+ cd to-do<br>
 
-# Install the dependencies:
-
+**Install the dependencies:**
+   
     npm install
     npm install axios
     npm install downloadjs
     npm install html2canvas
     npm install tooltip
     npm install react-icons
-# Server
-Navigate to the server directory.
-    npm install
-    npm install express
-    npm install fs
-    npm install body-parser
+**Server : folder with the name server**<br>
+Navigate to the server directory.<br>
+    npm install<br>
+    npm install express<br>
+    npm install fs<br>
+    npm install body-parser<br>
 
 # Running the Application
-Open the two instances of the terminal.
+Open the two instances of the terminal.<br>
 Make sure you are starting the server before the client.
 # Server:
-In one terminal
+**In one terminal**<br>
 Navigate to the server directory.
 
-Start the server:
-npm start or node server.js
+**Start the server:**<br>
+npm start or node server.js<br>
 The server will run on http://localhost:4000
 
 # Client
-Second Terminal:
-Navigate to the client directory.which is to-do.
+**Second Terminal:**<br>
+Navigate to the client directory here that is to-do.
 
-Start the client:
-npm start
+**Start the client:**<br>
+npm start<br>
 The client will run on http://localhost:3000.
 
 # Features
-** Add To-Do Lists **: Users can add new to-do lists.
-** Edit To-Do Lists **: Users can edit the titles of existing to-do lists.
-** Delete To-Do Lists **: Users can delete existing to-do lists.
-** Add To-Do Itemsc **: Users can add new to-do items to a list.
-** Edit To-Do Items **: Users can edit the titles of existing to-do items.
-** Delete To-Do Items**: Users can delete existing to-do items.
-** Filter To-Do Items**: Users can filter to-do items by their completion status.
-** Download Snapshot**: Users can download a snapshot of their to-do list.
+**Add To-Do Lists**: Users can add new to-do lists.<br>
+**Edit To-Do Lists**: Users can edit the titles of existing to-do lists.<br>
+**Delete To-Do Lists**: Users can delete existing to-do lists.<br>
+**Add To-Do Itemsc**: Users can add new to-do items to a list.<br>
+**Edit To-Do Items**: Users can edit the titles of existing to-do items.<br>
+**Delete To-Do Items**: Users can delete existing to-do items.<br>
+**Filter To-Do Items**: Users can filter to-do items by their completion status.<br>
+**Download Snapshot**: Users can download a snapshot of their to-do list.<br>
 
 # Components
 **AddTodoList**
@@ -116,86 +116,86 @@ A component that provides an input field for adding new to-do items.
 
 **API Endpoints on client Side**
     ***GET /todos***
-    Fetch all to-do lists.
+    Fetch all to-do lists.<br>
     **GET /todos/{listid}**
-    Fetch a specific to-do list by ID.
+    Fetch a specific to-do list by ID.<br>
     **POST /todos**
-    Create a new to-do list.
+    Create a new to-do list.<br>
     **POST /todos/{listid}/todoItems/{itemid}**
-    Add a new item to a specific to-do list by ID.
+    Add a new item to a specific to-do list by ID.<br>
    **PUT /todos/{listid}**
-    Update a to-do list by ID.
+    Update a to-do list by ID.<br>
    **PUT /todos/{listid}/todoItems/{itemid}**
-    Update a specific item in a to-do list by list ID and item ID.
+    Update a specific item in a to-do list by list ID and item ID.<br>
     **DELETE /todos/{listId}**
-    Delete a to-do list by ID.
+    Delete a to-do list by ID.<br>
     **DELETE /todos/{listid}/todoItems/{itemid}**
-    Delete a specific item in a to-do list by list ID and item ID.
+    Delete a specific item in a to-do list by list ID and item ID.<br>
 
 **API Endpoints on server Side**
     ***GET /todos***
-    Retrieve the list of all to-do lists.
-    Response
-    Status 200: Returns an array of to-do lists.
-    Status 204: If the list is empty.
-    Status 500: If there's an error reading the list.
+    Retrieve the list of all to-do lists.<br>
+    Response<br>
+    Status 200: Returns an array of to-do lists.<br>
+    Status 204: If the list is empty.<br>
+    Status 500: If there's an error reading the list.<br>
   **GET /todos/:id**
-    Retrieve a specific to-do list by ID.
-    Response
-    Status 200: Returns the to-do list.
-    Status 204: If the list is empty.
-    Status 404: If the to-do list is not found.
+    Retrieve a specific to-do list by ID.<br>
+    Response<br>
+    Status 200: Returns the to-do list.<br>
+    Status 204: If the list is empty.<br>
+    Status 404: If the to-do list is not found.<br>
    ***POST /todos***
-    Create a new to-do list.
-    Request Body
-    id: Unique identifier for the to-do list.
-    title: Title of the to-do list.
-    todoItems: Array of to-do items.
-    Response
-    Status 201: Returns the created to-do list.
-    Status 400: If the provided data is invalid.
+    Create a new to-do list.<br>
+    Request Body<br>
+    id: Unique identifier for the to-do list.<br>
+    title: Title of the to-do list.<br>
+    todoItems: Array of to-do items.<br>
+    Response<br>
+    Status 201: Returns the created to-do list.<br>
+    Status 400: If the provided data is invalid.<br>
     ***POST /todos/:id/todoItems***
-    Add a new item to a specific to-do list.
-    Request Body
-    id: Unique identifier for the item.
-    title: Title of the item.
-    date: Date of the item.
-    isCompleted: Completion status.
-    Response
-    Status 201: Item added successfully.
-    Status 400: If the provided data is invalid.
-    Status 404: If the to-do list is not found.
-   *** PUT /todos/:id***
-    Update the title of a specific to-do list.
-    Request Body
-    title: New title for the to-do list.
-    Response
-    Status 200: Returns the updated to-do list.
-    Status 404: If the to-do list is not found.
-   *** PUT /todos/:id/todoItems/:itemId**
-    Update a specific item within a to-do list.
-    Request Body
-    title: New title for the item.
-    date: New date for the item.
-    isCompleted: New completion status.
-    Response
-    Status 200: Returns the updated item.
-    Status 404: If the to-do list or item is not found.
-    **DELETE /todos/:id/todoItems/:itemId**
-    Delete a specific item from a to-do list.
-    Response
-    Status 204: Item deleted successfully.
-    Status 404: If the to-do list or item is not found.
-    **DELETE /todos/:id**
-    Delete a specific to-do list.
-    Response
-    Status 204: To-do list deleted successfully.
-    Status 404: If the to-do list is not found.
+    Add a new item to a specific to-do list.<br>
+    Request Body<br>
+    id: Unique identifier for the item.<br>
+    title: Title of the item.<br>
+    date: Date of the item.<br>
+    isCompleted: Completion status.<br>
+    Response<br>
+    Status 201: Item added successfully.<br>
+    Status 400: If the provided data is invalid.<br>
+    Status 404: If the to-do list is not found.<br>
+   *** PUT /todos/:id**<br>
+    Update the title of a specific to-do list.<br>
+    Request Body<br>
+    title: New title for the to-do list.<br>
+    Response<br>
+    Status 200: Returns the updated to-do list.<br>
+    Status 404: If the to-do list is not found.<br>
+   *** PUT /todos/:id/todoItems/:itemId**<br>
+    Update a specific item within a to-do list.<br>
+    Request Body<br>
+    title: New title for the item.<br>
+    date: New date for the item.<br>
+    isCompleted: New completion status.<br>
+    Response<br>
+    Status 200: Returns the updated item.<br>
+    Status 404: If the to-do list or item is not found.<br>
+    **DELETE /todos/:id/todoItems/:itemId**<br>
+    Delete a specific item from a to-do list.<br>
+    Response<br>
+    Status 204: Item deleted successfully.<br>
+    Status 404: If the to-do list or item is not found.<br>
+    **DELETE /todos/:id**<br>
+    Delete a specific to-do list.<br>
+    Response<br>
+    Status 204: To-do list deleted successfully.<br>
+    Status 404: If the to-do list is not found.<br>
 
-**Styling**
-    The project uses custom CSS for styling. The CSS file is located at todoListClient/to-do/Components/src/Todo/TodoList.css.
+**Styling**<br>
+    The project uses custom CSS for styling. The CSS file is located at todoListClient/to-do/Components/src/Todo/TodoList.css.<br>
 
-**Dependencies**
+**Dependencies**<br>
     Client
     React
     Axios
@@ -208,10 +208,10 @@ A component that provides an input field for adding new to-do items.
     body-parser
     fs
     path
-**Conclusion**
+**Conclusion**<br>
 
-**Server-Side**
-    The server-side of this application, built with Express and Node.js, provides a robust API for managing to-do lists and their items. Key functionalities include creating, reading, updating, and deleting to-do lists and items. The use of the fs module for file operations ensures that data is persistently stored in a JSON file, making it easy to manage and retrieve tasks. Despite its simplicity, this approach allows for flexibility in managing tasks, and the server efficiently handles various edge cases and error conditions. 
-**Client-Side**
+**Server-Side**<br>
+    The server-side of this application, built with Express and Node.js, provides a robust API for managing to-do lists and their items. Key functionalities include creating, reading, updating, and deleting to-do lists and items. The use of the fs module for file operations ensures that data is persistently stored in a JSON file, making it easy to manage and retrieve tasks. Despite its simplicity, this approach allows for flexibility in managing tasks, and the server efficiently handles various edge cases and error conditions. <br>
+**Client-Side**<br>
     The client-side of the application interacts with the server via HTTP requests to perform CRUD operations on to-do lists and items. It features a user-friendly interface for managing tasks, with forms for adding and editing to-do lists and items. By using React and state management techniques, the client-side ensures a dynamic and responsive user experience. The application’s design allows for easy navigation and interaction, making task management straightforward and efficient.
     Together, both the server and client sides form a cohesive system that addresses fundamental to-do list application  needs.
