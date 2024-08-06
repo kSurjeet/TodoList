@@ -60,6 +60,7 @@ Navigate to the todoListClient directory:<br>
     npm install html2canvas
     npm install tooltip
     npm install react-icons
+
 **Server : folder with the name server**<br>
 Navigate to the server directory.<br>
     npm install<br>
@@ -98,23 +99,23 @@ The client will run on http://localhost:3000.
 
 # Components
 **AddTodoList**
-    A component that allows users to add new to-do lists.
+    A component that allows users to add new to-do lists.<br>
 **Todolist**
-    A component that displays the list of to-do lists and allows users to interact with them (add, edit, delete, select).
+    A component that displays the list of to-do lists and allows users to interact with them (add, edit, delete, select).<br>
 **TodoListItems**
-A component that displays the items of a selected to-do list and allows users to interact with them (add, edit, delete, mark as complete/incomplete).
+A component that displays the items of a selected to-do list and allows users to interact with them (add, edit, delete, mark as complete/incomplete).<br>
 **FilterComponent**
-    A component that provides filtering options for to-do items.
+    A component that provides filtering options for to-do items.<br>
 **InputComponent**
-A component that provides an input field for adding new to-do items.
+A component that provides an input field for adding new to-do items.<br>
 **TodoListComponent**
-    A component that displays the filtered to-do items.
+    A component that displays the filtered to-do items.<br>
 **Server.js**
-    To handle all server requests.
+    To handle all server requests.<br>
 **todoList.json**
-    File Operations: Managing file reads and writes efficiently to handle concurrent operations.
+    File Operations: Managing file reads and writes efficiently to handle concurrent operations.<br>
 
-**API Endpoints on client Side**
+**API Endpoints on client Side**<br><br>
     ***GET /todos***
     Fetch all to-do lists.<br>
     **GET /todos/{listid}**
@@ -132,7 +133,7 @@ A component that provides an input field for adding new to-do items.
     **DELETE /todos/{listid}/todoItems/{itemid}**
     Delete a specific item in a to-do list by list ID and item ID.<br>
 
-**API Endpoints on server Side**
+**API Endpoints on server Side**<br><br>
     ***GET /todos***
     Retrieve the list of all to-do lists.<br>
     Response<br>
@@ -165,14 +166,14 @@ A component that provides an input field for adding new to-do items.
     Status 201: Item added successfully.<br>
     Status 400: If the provided data is invalid.<br>
     Status 404: If the to-do list is not found.<br>
-   *** PUT /todos/:id**<br>
+   **PUT /todos/:id**<br>
     Update the title of a specific to-do list.<br>
     Request Body<br>
     title: New title for the to-do list.<br>
     Response<br>
     Status 200: Returns the updated to-do list.<br>
     Status 404: If the to-do list is not found.<br>
-   *** PUT /todos/:id/todoItems/:itemId**<br>
+   **PUT /todos/:id/todoItems/:itemId**<br>
     Update a specific item within a to-do list.<br>
     Request Body<br>
     title: New title for the item.<br>
