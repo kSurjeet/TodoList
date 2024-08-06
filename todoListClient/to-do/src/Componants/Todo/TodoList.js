@@ -10,19 +10,19 @@ import AddTodoList from '../AddTodo/AddTodoList'; // Import the new component
 
 
 export default function Todolist() {
-    const [listitems, setListItems] = useState([]); 
-    const [messageList, setMessageList] = useState(''); 
-    const [isEditing, setIsEditing] = useState(false); 
-    const [editingId, setEditingId] = useState(null); 
+    const [listitems, setListItems] = useState([]); // State to hold all lists
+    const [messageList, setMessageList] = useState('');  //State to set message after delete, add, update
+    const [isEditing, setIsEditing] = useState(false); //to check we editing the title
+    const [editingId, setEditingId] = useState(null);  //to check edit
     const [editingValue, setEditingValue] = useState(''); 
     const [selectedListId, setSelectedListId] = useState(null); 
-    const [selectedListTitle, setSelectedListTitle] = useState(null); 
+    const [selectedListTitle, setSelectedListTitle] = useState(null);  // State to hold the selected list Title
     const [fromAdd, setFromAdd] = useState(false);
-
+    // function to call on first load
     useEffect(() => {
         fetchTodos();
     }, []);
-
+     // to fetch all Lists
     const fetchTodos = async () => {
         try {
             const res = await axios.get('/todos');
@@ -45,6 +45,7 @@ export default function Todolist() {
         }
     };
 
+        // to post item to server
     const postTodoItem = async (addListValue) => {
         try {
             const res = await axios.post('/todos', {
@@ -64,14 +65,14 @@ export default function Todolist() {
             setMessageList('Error posting todo item');
         }
     };
-
+ //to add all functions in one call for posting list
     const handleAddItemToServer = (addListValue) => {
         if (addListValue.trim()) {
             postTodoItem(addListValue); 
             setMessageList('List Added');
         }
     };
-
+  // delete list from server
     const handleRemoveItem = async (index) => {
         try {
             const res = await axios.delete(`/todos/${index}`);
@@ -82,13 +83,13 @@ export default function Todolist() {
             setMessageList('Error deleting todo item');
         }
     };
-
+ // To update the list title
     const handleEditItem = (item) => {
         setIsEditing(true);
         setEditingId(item.id);
         setEditingValue(item.title);
     };
-
+//to save edit value to server
     const handleSaveEdit = async () => {
         try {
             const res = await axios.put(`/todos/${editingId}`, {
@@ -107,7 +108,7 @@ export default function Todolist() {
         setSelectedListId(id);
         setSelectedListTitle(title);
     };
-
+ // call function to add list with enter
     const handleEditValue = (e) => {
         if (e.key === 'Enter') {
             handleSaveEdit();

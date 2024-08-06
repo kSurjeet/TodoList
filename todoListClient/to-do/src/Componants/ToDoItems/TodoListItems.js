@@ -9,25 +9,27 @@ import html2canvas from 'html2canvas';
 import { Tooltip } from 'react-tooltip';
 
 export default function TodoListItems1({ listId, listTitle }) {
-    const [todoItems, setTodoItems] = useState([]);
-    const [message, setMessage] = useState('');
-    const [showInput, setShowInput] = useState(false);
-    const [addListItemValue, setAddListItemValue] = useState('');
-    const [editItem, setEditItem] = useState(null);
-    const [editValue, setEditValue] = useState('');
-    const [filter, setFilter] = useState('all');
-    const [filteredItems, setFilteredItems] = useState([]);
+    const [todoItems, setTodoItems] = useState([]);  // State to hold list items
+    const [message, setMessage] = useState('');  // State to hold message after deletion, add, update
+    const [showInput, setShowInput] = useState(false);  // show input to add list items
+    const [addListItemValue, setAddListItemValue] = useState('');   // Value to add to list
+    const [editItem, setEditItem] = useState(null);  // which item is editing
+    const [editValue, setEditValue] = useState('');  // value after editing
+    const [filter, setFilter] = useState('all');   // to filter list not completed, completed and all
+    const [filteredItems, setFilteredItems] = useState([]);  // to hold filtered items
 
+    // function to call on first load with list ID
     useEffect(() => {
         if (listId) {
             fetchTodoItems();
         }
     }, [listId]);
-
+    // filtered results 
     useEffect(() => {
         applyFilter();
     }, [todoItems, filter]);
 
+    //to fetch all List Items
     const fetchTodoItems = async () => {
         try {
             const res = await axios.get(`/todos/${listId}`);
@@ -42,12 +44,12 @@ export default function TodoListItems1({ listId, listTitle }) {
             setMessage('Error fetching todo items');
         }
     };
-
+// to add list item
     const handleAddItem = () => {
         setShowInput(true);
         addTodoListItems();
     };
-
+ //to add function for posting list items
     const addTodoListItems = async () => {
         if (addListItemValue.trim()) {
             try {
@@ -67,7 +69,7 @@ export default function TodoListItems1({ listId, listTitle }) {
             }
         }
     };
-
+// to update list item title
     const updateTodoListItem = async () => {
         if (editValue.trim()) {
             try {
@@ -82,7 +84,7 @@ export default function TodoListItems1({ listId, listTitle }) {
             }
         }
     };
-
+ // to remove list item
     const deleteTodoListItem = async (itemId) => {
         try {
             await axios.delete(`/todos/${listId}/todoItems/${itemId}`);
@@ -92,7 +94,7 @@ export default function TodoListItems1({ listId, listTitle }) {
             setMessage('Error deleting todo item');
         }
     };
-
+ // to handle edit title
     const handleEditClick = (item) => {
         setEditItem(item);
         setEditValue(item.title);
@@ -116,7 +118,7 @@ export default function TodoListItems1({ listId, listTitle }) {
             setMessage('Error updating completion status');
         }
     };
-
+//to set filter value
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
     };
@@ -130,7 +132,7 @@ export default function TodoListItems1({ listId, listTitle }) {
         }
         setFilteredItems(items);
     };
-
+// call function to add list with enter
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             updateTodoListItem();
@@ -142,7 +144,7 @@ export default function TodoListItems1({ listId, listTitle }) {
             handleAddItem();
         }
     };
-
+// to download image of todoList
     const handleCaptureClick = async () => {
         try {
             const todoElmt = document.querySelector('.todoItemsContainer');
