@@ -115,37 +115,37 @@ A component that provides an input field for adding new to-do items.
     File Operations: Managing file reads and writes efficiently to handle concurrent operations.
 
 **API Endpoints on client Side**
-    GET /todos
+    ***GET /todos***
     Fetch all to-do lists.
-    GET /todos/{listid}
+    **GET /todos/{listid}**
     Fetch a specific to-do list by ID.
-    POST /todos
+    **POST /todos**
     Create a new to-do list.
-    POST /todos/{listid}/todoItems/{itemid}
+    **POST /todos/{listid}/todoItems/{itemid}**
     Add a new item to a specific to-do list by ID.
-    PUT /todos/{listid}
+   **PUT /todos/{listid}**
     Update a to-do list by ID.
-    PUT /todos/{listid}/todoItems/{itemid}
+   **PUT /todos/{listid}/todoItems/{itemid}**
     Update a specific item in a to-do list by list ID and item ID.
-    DELETE /todos/{listId}
+    **DELETE /todos/{listId}**
     Delete a to-do list by ID.
-    DELETE /todos/{listid}/todoItems/{itemid}
+    **DELETE /todos/{listid}/todoItems/{itemid}**
     Delete a specific item in a to-do list by list ID and item ID.
 
 **API Endpoints on server Side**
-    GET /todos
+    ***GET /todos***
     Retrieve the list of all to-do lists.
     Response
     Status 200: Returns an array of to-do lists.
     Status 204: If the list is empty.
     Status 500: If there's an error reading the list.
-    GET /todos/:id
+  **GET /todos/:id**
     Retrieve a specific to-do list by ID.
     Response
     Status 200: Returns the to-do list.
     Status 204: If the list is empty.
     Status 404: If the to-do list is not found.
-    POST /todos
+   ***POST /todos***
     Create a new to-do list.
     Request Body
     id: Unique identifier for the to-do list.
@@ -154,7 +154,7 @@ A component that provides an input field for adding new to-do items.
     Response
     Status 201: Returns the created to-do list.
     Status 400: If the provided data is invalid.
-    POST /todos/:id/todoItems
+    ***POST /todos/:id/todoItems***
     Add a new item to a specific to-do list.
     Request Body
     id: Unique identifier for the item.
@@ -165,14 +165,14 @@ A component that provides an input field for adding new to-do items.
     Status 201: Item added successfully.
     Status 400: If the provided data is invalid.
     Status 404: If the to-do list is not found.
-    PUT /todos/:id
+   *** PUT /todos/:id***
     Update the title of a specific to-do list.
     Request Body
     title: New title for the to-do list.
     Response
     Status 200: Returns the updated to-do list.
     Status 404: If the to-do list is not found.
-    PUT /todos/:id/todoItems/:itemId
+   *** PUT /todos/:id/todoItems/:itemId**
     Update a specific item within a to-do list.
     Request Body
     title: New title for the item.
@@ -181,12 +181,12 @@ A component that provides an input field for adding new to-do items.
     Response
     Status 200: Returns the updated item.
     Status 404: If the to-do list or item is not found.
-    DELETE /todos/:id/todoItems/:itemId
+    **DELETE /todos/:id/todoItems/:itemId**
     Delete a specific item from a to-do list.
     Response
     Status 204: Item deleted successfully.
     Status 404: If the to-do list or item is not found.
-    DELETE /todos/:id
+    **DELETE /todos/:id**
     Delete a specific to-do list.
     Response
     Status 204: To-do list deleted successfully.
@@ -209,6 +209,7 @@ A component that provides an input field for adding new to-do items.
     fs
     path
 **Conclusion**
+
 **Server-Side**
     The server-side of this application, built with Express and Node.js, provides a robust API for managing to-do lists and their items. Key functionalities include creating, reading, updating, and deleting to-do lists and items. The use of the fs module for file operations ensures that data is persistently stored in a JSON file, making it easy to manage and retrieve tasks. Despite its simplicity, this approach allows for flexibility in managing tasks, and the server efficiently handles various edge cases and error conditions. 
 **Client-Side**
