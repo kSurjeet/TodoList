@@ -7,7 +7,7 @@ const port = 4000;
 const dataFile = path.join(__dirname, 'todoList.json');
 const cors = require('cors');
 const corsOptions ={
-  origin:'https://todo-list-front-end-ten.vercel.app/*', 
+  origin:'https://todo-list-front-end-ten.vercel.app/', 
   credentials:true,                
   optionSuccessStatus:200,
   methods: 'GET,POST,PUT,DELETE',
