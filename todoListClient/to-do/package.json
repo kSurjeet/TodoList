@@ -40,6 +40,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "https://todo-list-backend-479kog3gn-ksurjeets-projects.vercel.app/server.js"
 }
 }
