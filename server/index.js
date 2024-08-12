@@ -5,17 +5,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const port = 4000;
 const dataFile = path.join(__dirname, 'todoList.json');
-const cors = require('cors');
-const corsOptions ={
-  origin:'https://todo-list-backend-479kog3gn-ksurjeets-projects.vercel.app', 
-  credentials:true,                
-  optionSuccessStatus:200,
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization'
-}
+
 //Middleware
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+
 
 // Function to read tasks from file
 const readTasksFromFile = () => {
