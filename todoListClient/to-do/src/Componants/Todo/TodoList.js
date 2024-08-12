@@ -28,7 +28,7 @@ export default function Todolist() {
     const fetchTodos = async () => {
         try {
             // console.log('backendUrl',backendUrl);
-            const res = await axios.get('https://todo-list-backend-479kog3gn-ksurjeets-projects.vercel.app/todos');
+            const res = await axios.get('https://todo-list-backend-9s769pxo4-ksurjeets-projects.vercel.app/todos');
             if (res.status === 200) {
                 setMessageList('');
                 setListItems(res.data);
