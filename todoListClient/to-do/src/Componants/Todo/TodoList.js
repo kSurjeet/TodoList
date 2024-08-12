@@ -9,6 +9,7 @@ import TodoListItems from '../ToDoItems/TodoListItems';
 import AddTodoList from '../AddTodo/AddTodoList'; // Import the new component
 
 
+
 export default function Todolist() {
     const [listitems, setListItems] = useState([]); // State to hold all lists
     const [messageList, setMessageList] = useState('');  //State to set message after delete, add, update
@@ -18,6 +19,7 @@ export default function Todolist() {
     const [selectedListId, setSelectedListId] = useState(null); 
     const [selectedListTitle, setSelectedListTitle] = useState(null);  // State to hold the selected list Title
     const [fromAdd, setFromAdd] = useState(false);
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
     // function to call on first load
     useEffect(() => {
         fetchTodos();
@@ -25,7 +27,7 @@ export default function Todolist() {
      // to fetch all Lists
     const fetchTodos = async () => {
         try {
-            const res = await axios.get('/todos');
+            const res = await axios.get('{backendUrl}/todos');
             if (res.status === 200) {
                 setMessageList('');
                 setListItems(res.data); 
