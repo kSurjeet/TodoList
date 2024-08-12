@@ -32,7 +32,7 @@ export default function Todolist() {
             if (res.status === 200) {
                 setMessageList('');
                 setListItems(res.data);
-                console.log(listItems);
+               
                 if (res.data.length > 0) {
                     handleSelectList(res.data[0].id, res.data[0].title);
                 }
