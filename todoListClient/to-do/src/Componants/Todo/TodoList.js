@@ -27,7 +27,7 @@ export default function Todolist() {
      // to fetch all Lists
     const fetchTodos = async () => {
         try {
-            console.log(backendUrl);
+            console.log('backendUrl',backendUrl);
             const res = await axios.get('{backendUrl}/todos');
             if (res.status === 200) {
                 setMessageList('');
