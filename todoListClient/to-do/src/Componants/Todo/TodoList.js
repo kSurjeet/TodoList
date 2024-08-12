@@ -19,7 +19,7 @@ export default function Todolist() {
     const [selectedListId, setSelectedListId] = useState(null); 
     const [selectedListTitle, setSelectedListTitle] = useState(null);  // State to hold the selected list Title
     const [fromAdd, setFromAdd] = useState(false);
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+    // const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
     // function to call on first load
     useEffect(() => {
         fetchTodos();
@@ -27,11 +27,12 @@ export default function Todolist() {
      // to fetch all Lists
     const fetchTodos = async () => {
         try {
-            console.log('backendUrl',backendUrl);
-            const res = await axios.get('{backendUrl}/todos');
+            // console.log('backendUrl',backendUrl);
+            const res = await axios.get('/todos');
             if (res.status === 200) {
                 setMessageList('');
-                setListItems(res.data); 
+                setListItems(res.data);
+                console.log(listItems);
                 if (res.data.length > 0) {
                     handleSelectList(res.data[0].id, res.data[0].title);
                 }
