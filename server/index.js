@@ -1,5 +1,5 @@
 const express = require('express');
-const app = express();
+
 const fs = require('fs');// to read and write file
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -13,6 +13,7 @@ const corsOptions ={
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization'
 }
+const app = express();
 //Middleware
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
